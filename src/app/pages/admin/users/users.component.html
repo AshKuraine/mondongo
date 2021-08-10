@@ -1,0 +1,49 @@
+<div class="users-component" fxLayout="column">
+    <div class="mat-card-title" fxLayoutAlign="center center">
+        <mat-card class="mat-elevation-z12" fxFlex="90%">
+            <span>Usuarios/ Lista de Usuario</span>
+        </mat-card>
+    </div>
+    <div class="mat-card-content" fxLayout="row wrap" fxLayoutAlign="center center">
+        <mat-card class="mat-elevation-z12" fxFlex="90%" fxFlex.xs="100%">
+            <mat-card-title>
+                <span>Usuarios</span>
+            </mat-card-title>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z" fxFlex="100%">
+                    <!--Nro Column-->
+                    <ng-container matColumnDef="nro">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nro}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="nombre">
+                        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="apellidoPat">
+                        <th mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
+                        <td mat-cell *matCellDef="let element"> {{element.apellidoPat}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="apellidoMat">
+                        <th mat-header-cell *matHeaderCellDef> Apellido Materno </th>
+                        <td mat-cell *matCellDef="let element"> {{element.apellidoMat}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="dni">
+                        <th mat-header-cell *matHeaderCellDef>  DNI </th>
+                        <td mat-cell *matCellDef="let element"> {{element.dni}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
