@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   
   isOpen = true;
   events: string[] = [];
-  opened: boolean;
+  opened: boolean = true;
 
   toggle() {
      this.isOpen = !this.isOpen;

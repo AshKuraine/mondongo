@@ -8,6 +8,6 @@ import {MatSidenav} from '@angular/material/sidenav';
 })
 export class HomeComponent implements OnInit {
   events: string[] = [];
-  opened: boolean;
+  opened: boolean = true;
   ngOnInit(): void {}
 }

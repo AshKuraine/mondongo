@@ -11,6 +11,7 @@ import { HospitalizationComponent } from './hospitalization/hospitalization.comp
 import { UrgencyComponent } from './urgency/urgency.component';
 import { EmergencyComponent } from './emergency/emergency.component';
 import { LaboratoryComponent } from './laboratory/laboratory.component';
+import { PatientsComponent } from './patients/patients.component';
 import { CardiologyComponent } from './cardiology/cardiology.component';
 const routes: Routes = [
     {
@@ -60,6 +61,10 @@ const routes: Routes = [
             {
             path: 'laboratory',
             component: LaboratoryComponent,
+            },
+            {
+            path: 'patients',
+            component: PatientsComponent,
             },
           ]
       },
