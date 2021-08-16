@@ -1,8 +1,16 @@
 <div style="display: block;">
     <ng-container>
         <mat-sidenav-container>
-            <mat-sidenav class="sidenav-menu-container" #sidenav mode="side" opened disableClose
+            <mat-sidenav class="sidenav-menu-container" #sidenav mode="over" closed disableClose
                 [fixedInViewport]="true"  class="mat-elevation-z0">
+                <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+                  <mat-icon *ngIf="!sidenav.opened">
+                      menu
+                  </mat-icon>
+                  <mat-icon *ngIf="sidenav.opened" style="color: white">
+                      close
+                  </mat-icon>
+              </button>
                 <mat-nav-list>
                     <div class="sidenav-menu-container-inner">
                         <div class="perfil">
