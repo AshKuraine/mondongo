@@ -2,8 +2,8 @@ import { Medic } from '../core/models/medic.models';
 
 export const MEDICS_DATA: Medic[] = [
     {
-        id: "M01", 
-        dni: "72202021", 
+        id: "M1", 
+        dni: 72202021, 
         name: "Enrique",
         lastname: "Yañez Cardenas", 
         age: 50,
@@ -16,8 +16,8 @@ export const MEDICS_DATA: Medic[] = [
         salary: 5000
     },
     {   
-        id: "M02",
-        dni: "72202022", 
+        id: "M2",
+        dni: 72202022, 
         name: "Daniel",
         lastname: "Salaverry Muñoz", 
         age: 40,
@@ -29,8 +29,8 @@ export const MEDICS_DATA: Medic[] = [
         salary: 4000
     },
     {   
-        id: "M03",
-        dni: "72202023", 
+        id: "M3",
+        dni: 72202023, 
         name: "Gabriel",
         lastname: "Ramirez Ortega", 
         age: 40,
@@ -39,8 +39,8 @@ export const MEDICS_DATA: Medic[] = [
         salary: 4500
     },
     {   
-        id: "M04",
-        dni: "72202024", 
+        id: "M4",
+        dni: 72202024, 
         name: "Adolfo",
         lastname: "Ramirez Altamirano", 
         age: 40,

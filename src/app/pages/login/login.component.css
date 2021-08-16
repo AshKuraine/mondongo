@@ -3,23 +3,24 @@
 }
 
 .img{
-  width: 100%;
-    height: auto;
-    opacity: 0.4;
+  height: auto;
+  width:  auto;
+  opacity: 0.4;
 }
 
 .background{
-  position: relative;
+  position: fixed;
 }
+
 .login{
-  height: 300px;
+    height: 300px;
     width: 100%;
     position: absolute;
     margin: 2rem;
 }
 
 mat-card {
-  width: 30%;
+  width: 400px;
   margin: 10% auto;
   border-radius: 8px;
 }

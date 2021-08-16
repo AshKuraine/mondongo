@@ -15,11 +15,11 @@
                     <div class="sidenav-menu-container-inner">
                         <div class="perfil">
                             <div style="text-align: center;">
-                                <img class="perfil" src="assets/titex.jpg">
+                                <img class="perfil" src="assets/perfil.jpg">
                             </div>
                             <div style="color: white; text-align: center; padding-top: 10px;">
-                                <h6>Kuraine, Ash </h6>
-                                <h6 style="color:white;">kuraine@mail.com</h6>
+                                <h6>{{name}}</h6>
+                                <h6 style="color:white;">{{email}}</h6>
                             </div>
                         </div>
                         <mat-divider></mat-divider>
@@ -161,7 +161,7 @@
                     </div>
                     <div fxFlex="40" fxLayout="row" fxLayoutAlign="end center">
                         <div style="font-size: 15px; padding-bottom: 0px;" fxFlexAlign="stretch" layout-align="center">
-                            <button mat-button [matMenuTriggerFor]="menu">Kuraine, Ash <span class="material-icons">
+                            <button mat-button [matMenuTriggerFor]="menu">{{name}}<span class="material-icons">
                                 expand_more
                                 </span>
                             </button>
