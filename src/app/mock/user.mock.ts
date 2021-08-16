@@ -1,11 +1,11 @@
 import { User } from '../core/models/user.models';
-let b1 = '1971-01-01T00:00:00' 
+let b1 = '1971-01-01T00:00:00'
 let newd1 = new Date(b1);
-let b2 = '1981-01-01T00:00:00' 
+let b2 = '1981-01-01T00:00:00'
 let newd2 = new Date(b2);
-let b3 = '1981-01-01T00:00:00' 
+let b3 = '1981-01-01T00:00:00'
 let newd3 = new Date(b3);
-let b4 = '1981-01-01T00:00:00' 
+let b4 = '1981-01-01T00:00:00'
 let newd4 = new Date(b4);
 export const USERS_DATA: User[] = [
 
@@ -21,12 +21,12 @@ export const USERS_DATA: User[] = [
         phone: [987654321,9876543212],
         birthdate: newd1,
         email: "eyañezc@verysalud.com",
-        civil_status: "Casado",
+        civil_status: "Soltero",
         address: "Av. Faucett 345, San Miguel",
         gender: "Masculino",
         status: true
     },
-    {   
+    {
         id: "U2",
         username: "dsalaverrym",
         password: "aabbcc",
@@ -43,7 +43,7 @@ export const USERS_DATA: User[] = [
         gender: "Masculino",
         status: true
     },
-    {   
+    {
         id: "U3",
         username: "gramirezo",
         password: "aabbcc",
@@ -60,7 +60,7 @@ export const USERS_DATA: User[] = [
         gender: "Masculino",
         status: true
     },
-    {   
+    {
         id: "U4",
         username: "aramireza",
         password: "aabbcc",
