@@ -90,7 +90,22 @@ export class PatientsComponent implements OnInit {
         district: this.ctrlDistrict.value,
         address: this.ctrlAddress.value
         })
+
         alert('Se registró al asegurado correctamente')
+        this.dni = 0;
+        this.id_history =  "";
+        this.name=  "";
+        this.lastname_p=  "";
+        this.lastname_m!=  "";
+        this.birthday = new Date();
+        this.gender=  "";
+        this.phone=  0;
+        this.email=  "";
+        this.civil_status=  "";
+        this.country=  "";
+        this.department=  "";
+        this.district!=  "";
+        this.address!=  "";
         console.log(
           this.ctrlName.value,
           this.ctrlLastname_p.value + " " + this.ctrlLastname_m.value,

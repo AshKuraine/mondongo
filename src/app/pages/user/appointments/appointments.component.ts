@@ -19,7 +19,6 @@ export class AppointmentsComponent implements OnInit {
   dni!: number;
   name !: string;
   lastname!: string ;
-  age!: number;
   id_history!: string;
   enabled: boolean = false;
   controlDni!: FormControl;
@@ -49,7 +48,7 @@ export class AppointmentsComponent implements OnInit {
         this.name = ENSUREDS_DATA[i].name;
         this.lastname = ENSUREDS_DATA[i].lastname_p + " "  + ENSUREDS_DATA[i].lastname_m;
         this.dni = ENSUREDS_DATA[i].dni;
-        this.age = this.now.getFullYear() - ENSUREDS_DATA[i].birthday.getFullYear();
+        console.log(this.now.getFullYear());
         this.id_history = ENSUREDS_DATA[i].id_history;
         this.enabled=true;
         console.log(this.id_history);
@@ -58,7 +57,6 @@ export class AppointmentsComponent implements OnInit {
         this.name = "";
         this.lastname = "";
         this.dni = 0;
-        this.age = 0;
         this.id_history = "";
       }
     }
@@ -101,7 +99,6 @@ export class AppointmentsComponent implements OnInit {
         this.id_history="";
         this.name="";
         this.lastname="";
-        this.age=0;
         this.controlDni = new FormControl('',[Validators.required, Validators.maxLength(8)]),
         this.controlSpecialty = new FormControl('',[Validators.required]),
         this.controlMedic = new FormControl('',[Validators.required]),
