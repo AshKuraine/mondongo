@@ -7,6 +7,7 @@ import { SPECIALTIES_DATA } from '../../../mock/specialty.mock';
 import { MEDICS_DATA } from '../../../mock/medic.mock';
 import { APPOINTMENTS_DATA } from '../../../mock/appointment.mock';
 
+
 @Component({
   selector: 'app-appointments',
   templateUrl: './appointments.component.html',
@@ -14,21 +15,29 @@ import { APPOINTMENTS_DATA } from '../../../mock/appointment.mock';
 })
 
 export class AppointmentsComponent implements OnInit {
-  dni!: string;
-  name!: string;
+  now = new Date();
+  dni!: number;
+  name !: string;
   lastname!: string ;
   age!: number;
   id_history!: string;
   enabled: boolean = false;
-  controlDni = new FormControl('',[Validators.required, Validators.maxLength(8)]);
-  controlSpecialty = new FormControl('',[Validators.required]); 
-  controlMedic = new FormControl('',[Validators.required]);
-  controlDate = new FormControl('',[Validators.required]);
-  controlSchedule = new FormControl('',[Validators.required]);
+  controlDni!: FormControl;
+  controlSpecialty!: FormControl;
+  controlMedic!: FormControl; 
+  controlDate !: FormControl;
+  controlSchedule !: FormControl;
   specialties: Specialty[] = SPECIALTIES_DATA;
   medics!: Medic[];
   schedules: string[] = [];
-  constructor() { }
+  constructor(
+  ) {
+    this.controlDni = new FormControl('',[Validators.required, Validators.maxLength(8)]),
+    this.controlSpecialty = new FormControl('',[Validators.required]),
+    this.controlMedic = new FormControl('',[Validators.required]),
+    this.controlDate = new FormControl('',[Validators.required]),
+    this.controlSchedule = new FormControl('',[Validators.required])
+   }
   ngOnInit(): void {
   }
 
@@ -37,25 +46,25 @@ export class AppointmentsComponent implements OnInit {
     for (let i = 0; i < ENSUREDS_DATA.length; i++) {
       if(ENSUREDS_DATA[i].dni==this.controlDni.value){
         this.name = ENSUREDS_DATA[i].name;
-        this.lastname = ENSUREDS_DATA[i].lastname;
+        this.lastname = ENSUREDS_DATA[i].lastname_p + " "  + ENSUREDS_DATA[i].lastname_m;
         this.dni = ENSUREDS_DATA[i].dni;
-        this.age = ENSUREDS_DATA[i].age;
+        this.age = this.now.getFullYear() - ENSUREDS_DATA[i].birthday.getFullYear();
         this.id_history = ENSUREDS_DATA[i].id_history;
         this.enabled=true;
         return;
       }else{
         this.name = "";
         this.lastname = "";
-        this.dni = "";
+        this.dni = 0;
         this.age = 0;
         this.id_history = "";
       }
     }
   }
-  onSelectedSpecialty(event:Event){
+  onSelectedSpecialty(){
     this.medics = MEDICS_DATA.filter(medic=> medic.id_specialty == this.controlSpecialty.value);
   }
-  onSelectedMedic(event:Event){
+  onSelectedMedic(){
     this.schedules=[];
     for(let i=0;i<MEDICS_DATA.length;i++){
       if(MEDICS_DATA[i].id == this.controlMedic.value){
@@ -69,7 +78,7 @@ export class AppointmentsComponent implements OnInit {
 
   generateAppointment(){
     let id: string = "";
-    if(this.dni!=null && 
+    if(this.dni!=0 && 
        this.controlDate.valid && 
        this.controlMedic.valid && 
        !(this.controlMedic.value == "Seleccione") &&
@@ -86,6 +95,16 @@ export class AppointmentsComponent implements OnInit {
           schedule:this.controlSchedule.value
         })
         alert('Cita generada')
+        this.dni=0;
+        this.id_history="";
+        this.name="";
+        this.lastname="";
+        this.age=0;
+        this.controlDni = new FormControl('',[Validators.required, Validators.maxLength(8)]),
+        this.controlSpecialty = new FormControl('',[Validators.required]),
+        this.controlMedic = new FormControl('',[Validators.required]),
+        this.controlDate = new FormControl('',[Validators.required]),
+        this.controlSchedule = new FormControl('',[Validators.required])
        }else{
          alert('Complete todos los campos')
        }

@@ -55,7 +55,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">Especialidad</h6>
                         <select class="form-select" style="font-size:1rem"
                                 [formControl]="controlSpecialty"
-                                (change)=onSelectedSpecialty($event)>
+                                (change)="onSelectedSpecialty()">
                               <option selected>Seleccione</option>
                               <option *ngFor = "let spe of specialties" value={{spe.id}}>{{spe.name}}</option>
                         </select>
@@ -65,7 +65,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">Médico</h6>
                         <select class="form-select" style="font-size:1rem"
                                 [formControl]="controlMedic"
-                                (change)=onSelectedMedic($event)>
+                                (change)="onSelectedMedic()">
                               <option selected>Seleccione</option>
                               <option *ngFor = "let med of medics " value = {{med.id}}>{{med.name}} {{med.lastname}}</option>
                         </select>

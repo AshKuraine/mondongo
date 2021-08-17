@@ -21,7 +21,7 @@ export const USERS_DATA: User[] = [
         phone: [987654321,9876543212],
         birthdate: newd1,
         email: "eyañezc@verysalud.com",
-        civil_status: "Soltero",
+        civil_status: "Casado",
         address: "Av. Faucett 345, San Miguel",
         gender: "Masculino",
         status: true
