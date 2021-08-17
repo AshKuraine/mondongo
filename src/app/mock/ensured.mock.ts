@@ -6,9 +6,9 @@ let newd2 = new Date(b2);
 
 export const ENSUREDS_DATA: Ensured[] = [
     {
-        dni: 78013021, 
+        dni: 78013021,
         id_history:"HC1",
-        name: 'Adrian', 
+        name: 'Adrian',
         lastname_p: 'Lazaro',
         lastname_m: 'Llacua',
         birthday: newd1,
@@ -22,15 +22,15 @@ export const ENSUREDS_DATA: Ensured[] = [
         address: "Av. independencia 1548"
     },
     {
-        dni: 78013022, 
+        dni: 78013022,
         id_history:"HC2",
-        name: 'Gustavo', 
+        name: 'Gustavo',
         lastname_p: 'Moreno',
         lastname_m: 'Tito',
         birthday: newd2,
         gender: "Masculino",
         phone: 983847371,
-        email: "erick.lazaro@unmsm.edu.pe",
+        email: "kurane@gmail.com",
         civil_status: "Soltero",
         country: "Perú",
         department: "Lima",

@@ -19,9 +19,9 @@ export class PatientsComponent implements OnInit {
   email!:string;
   civil_status!: string;
   country!: string;
-  department!: string;   
+  department!: string;
   district!: string;
-  address!: string; 
+  address!: string;
 
   ctrlName = new FormControl('', [Validators.required]);
   ctrlLastname_p = new FormControl('', [Validators.required]);
@@ -59,8 +59,8 @@ export class PatientsComponent implements OnInit {
       this.ctrlAddress.valid){
         ENSUREDS_DATA.push({
         dni: this.ctrlDni.value,
-        id_history:("HC"+ENSUREDS_DATA.length),
-        name: this.ctrlName.value, 
+        id_history:("HC"+(ENSUREDS_DATA.length+1)),
+        name: this.ctrlName.value,
         lastname_p: this.ctrlLastname_p.value,
         lastname_m: this.ctrlLastname_m.value,
         birthday: this.ctrlBirthday.value,
@@ -97,8 +97,18 @@ export class PatientsComponent implements OnInit {
           if(ENSUREDS_DATA[i].dni==this.ctrlBuscarDni.value){
             this.name = ENSUREDS_DATA[i].name;
             this.lastname_p = ENSUREDS_DATA[i].lastname_p;
+            this.lastname_m = ENSUREDS_DATA[i].lastname_m;
+            this.birthday = ENSUREDS_DATA[i].birthday;
             this.dni = ENSUREDS_DATA[i].dni;
             this.id_history = ENSUREDS_DATA[i].id_history;
+            this.gender = ENSUREDS_DATA[i].gender;
+            this.phone = ENSUREDS_DATA[i].phone;
+            this.email = ENSUREDS_DATA[i].email;
+            this.civil_status = ENSUREDS_DATA[i].civil_status;
+            this.country = ENSUREDS_DATA[i].country;
+            this.department = ENSUREDS_DATA[i].department;
+            this.district = ENSUREDS_DATA[i].district;
+            this.address = ENSUREDS_DATA[i].address;
             return;
           }else{
             this.dni == null;
@@ -115,6 +125,6 @@ export class PatientsComponent implements OnInit {
             this.district = "";
             this.address = "";
           }
-        } 
+        }
       }
 }
