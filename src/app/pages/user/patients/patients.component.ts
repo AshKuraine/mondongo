@@ -23,22 +23,39 @@ export class PatientsComponent implements OnInit {
   district!: string;
   address!: string;
 
-  ctrlName = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
-  ctrlLastname_p = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
-  ctrlLastname_m = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
-  ctrlDni = new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(8), Validators.maxLength(8)]);
-  ctrlBirthday = new FormControl('', [Validators.required]);
-  ctrlGender = new FormControl('', [Validators.required]);
-  ctrlPhone = new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(9), Validators.maxLength(9)]);
-  ctrlEmail = new FormControl('', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]);
-  ctrlCivil_status = new FormControl('', [Validators.required]);
-  ctrlCountry = new FormControl('', [Validators.required]);
-  ctrlDepartment = new FormControl('', [Validators.required]);
-  ctrlDistrict = new FormControl('', [Validators.required]);
-  ctrlAddress = new FormControl('', [Validators.required])
+  ctrlName!: FormControl;
+  ctrlLastname_p!: FormControl;
+  ctrlLastname_m!: FormControl;
+  ctrlDni!: FormControl;
+  ctrlBirthday!: FormControl;
+  ctrlGender!: FormControl;
+  ctrlPhone!: FormControl;
+  ctrlEmail!: FormControl;
+  ctrlCivil_status!: FormControl;
+  ctrlCountry!: FormControl;
+  ctrlDepartment!: FormControl;
+  ctrlDistrict!: FormControl;
+  ctrlAddress!: FormControl;
 
-  ctrlBuscarDni = new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]);
-  constructor() { }
+  ctrlBuscarDni!: FormControl;
+
+  constructor() { 
+    this.ctrlName = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
+    this.ctrlLastname_p = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
+    this.ctrlLastname_m = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
+    this.ctrlDni = new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(8), Validators.maxLength(8)]);
+    this.ctrlBirthday = new FormControl('', [Validators.required]);
+    this.ctrlGender = new FormControl('', [Validators.required]);
+    this.ctrlPhone = new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(9), Validators.maxLength(9)]);
+    this.ctrlEmail = new FormControl('', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]);
+    this.ctrlCivil_status = new FormControl('', [Validators.required]);
+    this.ctrlCountry = new FormControl('', [Validators.required]);
+    this.ctrlDepartment = new FormControl('', [Validators.required]);
+    this.ctrlDistrict = new FormControl('', [Validators.required]);
+    this.ctrlAddress = new FormControl('', [Validators.required]);
+
+    this.ctrlBuscarDni = new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]);
+  }
 
   ngOnInit(): void {
   }
