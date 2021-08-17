@@ -7,6 +7,8 @@ let b3 = '1981-01-01T00:00:00'
 let newd3 = new Date(b3);
 let b4 = '1981-01-01T00:00:00'
 let newd4 = new Date(b4);
+let b5 = '2000-01-01T00:00:00'
+let newd5 = new Date(b5);
 export const USERS_DATA: User[] = [
 
     {
@@ -76,5 +78,22 @@ export const USERS_DATA: User[] = [
         address: "Av. Brasil 170, Breña",
         gender: "Masculino",
         status: true
-    }
+    },
+    {
+    id: "U5",
+    username: "uuserp001u",
+    password: "aabbcc",
+    id_role: ["R1"],
+    id_specialty:["ODO"],
+    name: "Mirella",
+    lastname: "Carpio",
+    dni: 72202024,
+    phone: [987654331,9876543231],
+    birthdate: newd5,
+    email: "user001@verysalud.com",
+    civil_status: "Soltero",
+    address: "Av. Bolivia 170, Breña",
+    gender: "Femenino",
+    status: true
+}
 ]
