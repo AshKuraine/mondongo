@@ -48,11 +48,14 @@
                 <div class="row">
                   <div class="form-group col-sm-4 mb-2">
                     <h6 class="card-subtitle mb-2 text-muted">Sexo</h6>
-                    <input type="text"  name="input1-group2" class="form-control" placeholder="Masculino o Femenino" [formControl] = "ctrlGender">
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" [formControl] = "ctrlGender">
+                      <option value="1">Masculino</option>
+                      <option value="2">Femenino</option>
+                  </select>
                   </div>
                   <div class="form-group col-sm-4 mb-2">
-                    <h6 class="card-subtitle mb-2 text-muted">Teléfono</h6>
-                    <input type="text"  name="input1-group2" class="form-control" placeholder="" [formControl] = "ctrlPhone">
+                    <h6 class="card-subtitle mb-2 text-muted">Celular</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="999999999" [formControl] = "ctrlPhone">
                   </div>
                   <div class="form-group col-sm-4 mb-2">
                     <h6 class="card-subtitle mb-2 text-muted">Correo Electrónico</h6>
@@ -62,12 +65,16 @@
                 <div class="row">
                   <div class="form-group col-sm-4 mb-2">
                     <h6 class="card-subtitle mb-2 text-muted">Estado Civil</h6>
-                    <input type="text"  name="input1-group2" class="form-control"  [formControl] = "ctrlCivil_status">
+                    <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" [formControl] = "ctrlCivil_status">
+                      <option value="1">Soltero</option>
+                      <option value="2">Casado</option>
+                      <option value="3">Viudo</option>
+                      <option value="3">Divorciado</option>
+                  </select>
                   </div>
                   <div class="form-group col-sm-4 mb-2">
                     <h6 class="card-subtitle mb-2 text-muted">País de Origen</h6>
                     <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" [formControl] = "ctrlCountry">
-                      <option value="0">Please select</option>
                       <option value="1">Perú</option>
                       <option value="2">Extranjero</option>
                   </select>
@@ -75,10 +82,7 @@
                   <div class="form-group col-sm-4 mb-2">
                     <h6 class="card-subtitle mb-2 text-muted" >Departamento</h6>
                     <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" [formControl] = "ctrlDepartment">
-                      <option value="0">Please select</option>
-                      <option value="1">Tumbes</option>
-                      <option value="2">Lima</option>
-                      <option value="3">Ancash</option>
+                      <option value="1">Lima</option>
                   </select>
                   </div>
                 </div>
@@ -86,10 +90,7 @@
                   <div class="form-group col-sm-4 mb-2">
                     <h6 class="card-subtitle mb-2 text-muted">Distrito</h6>
                     <select id="select2" name="select2" class="form-control form-control-mb"style="font-size:1rem" [formControl] = "ctrlDistrict">
-                      <option value="0">Please select</option>
-                      <option value="1">Bla</option>
-                      <option value="2">Bla</option>
-                      <option value="3">Bla</option>
+                      <option value="1">independencia</option>
                   </select>
                   </div>
                   <div class="form-group col-sm-8 mb-2">
@@ -162,8 +163,8 @@
                     <input type="text"  name="input1-group2" class="form-control" placeholder="Masculino o Femenino"  value={{gender}}>
                   </div>
                   <div class="form-group col-sm-4 mb-2">
-                    <h6 class="card-subtitle mb-2 text-muted">Teléfono</h6>
-                    <input type="text"  name="input1-group2" class="form-control" placeholder="Teléfono"  value={{phone}}>
+                    <h6 class="card-subtitle mb-2 text-muted">Celular</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="999999999"  value={{phone}}>
                   </div>
                   <div class="form-group col-sm-4 mb-2">
                     <h6 class="card-subtitle mb-2 text-muted">Correo Electrónico</h6>
@@ -332,8 +333,8 @@
                     <input type="text"  name="input1-group2" class="form-control" placeholder="Masculino o Femenino">
                   </div>
                   <div class="form-group col-sm-4 mb-2">
-                    <h6 class="card-subtitle mb-2 text-muted">Teléfono</h6>
-                    <input type="text"  name="input1-group2" class="form-control" placeholder="Teléfono">
+                    <h6 class="card-subtitle mb-2 text-muted">Celular</h6>
+                    <input type="text"  name="input1-group2" class="form-control" placeholder="999999999">
                   </div>
                   <div class="form-group col-sm-4 mb-2">
                     <h6 class="card-subtitle mb-2 text-muted">Correo Electrónico</h6>

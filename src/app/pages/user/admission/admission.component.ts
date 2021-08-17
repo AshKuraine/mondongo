@@ -13,7 +13,7 @@ import { Appointment } from 'src/app/core/models/appointment.models';
   styleUrls: ['./admission.component.css']
 })
 export class AdmissionComponent implements OnInit {
-  now = new Date();
+  now!:Date;
   controlDni!: FormControl;
   dni!: number;
   id_history!:string;
@@ -25,7 +25,8 @@ export class AdmissionComponent implements OnInit {
   appointment_date!:Date;
   schedule!:string;
   constructor() {
-    this.controlDni = new FormControl('',[Validators.required]);
+    this.controlDni = new FormControl('',[Validators.required, Validators.minLength(8), Validators.maxLength(8)]);
+    this.now = new Date();
    }
 
   ngOnInit(): void {

@@ -15,7 +15,7 @@ import { APPOINTMENTS_DATA } from '../../../mock/appointment.mock';
 })
 
 export class AppointmentsComponent implements OnInit {
-  now = new Date();
+  now!: Date;
   dni!: number;
   name !: string;
   lastname!: string ;
@@ -32,11 +32,12 @@ export class AppointmentsComponent implements OnInit {
   schedules: string[] = [];
   constructor(
   ) {
-    this.controlDni = new FormControl('',[Validators.required, Validators.maxLength(8)]),
+    this.controlDni = new FormControl('',[Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(8), Validators.maxLength(8)]),
     this.controlSpecialty = new FormControl('',[Validators.required]),
     this.controlMedic = new FormControl('',[Validators.required]),
     this.controlDate = new FormControl('',[Validators.required]),
-    this.controlSchedule = new FormControl('',[Validators.required])
+    this.controlSchedule = new FormControl('',[Validators.required]),
+    this.now = new Date()
    }
   ngOnInit(): void {
   }
@@ -51,6 +52,7 @@ export class AppointmentsComponent implements OnInit {
         this.age = this.now.getFullYear() - ENSUREDS_DATA[i].birthday.getFullYear();
         this.id_history = ENSUREDS_DATA[i].id_history;
         this.enabled=true;
+        console.log(this.id_history);
         return;
       }else{
         this.name = "";
