@@ -19,7 +19,6 @@ export class AdmissionComponent implements OnInit {
   id_history!:string;
   name!: string;
   lastname!: string;
-  age!:number;
   specialty!: string;
   medic!:string;
   appointment_date!:Date;
@@ -39,7 +38,6 @@ export class AdmissionComponent implements OnInit {
       ENSUREDS_DATA.filter(ensured => ensured.dni == this.controlDni.value)[0].lastname_m;
       this.id_history = ENSUREDS_DATA.filter(ensured => ensured.dni == this.controlDni.value)[0].id_history;
       this.dni = ENSUREDS_DATA.filter(ensured => ensured.dni == this.controlDni.value)[0].dni;
-      this.age = this.now.getFullYear() - ENSUREDS_DATA.filter(ensured => ensured.dni == this.controlDni.value)[0].birthday.getFullYear();
       this.specialty = SPECIALTIES_DATA.filter(specialty => specialty.id == (
         APPOINTMENTS_DATA.filter(appointment =>appointment.dni_ensured == this.controlDni.value)[0].id_specialty
       ))[0].name;
@@ -67,7 +65,6 @@ export class AdmissionComponent implements OnInit {
           this.id_history="";
           this.name="";
           this.lastname="";
-          this.age=0;
           this.specialty="";
           this.medic="";
           this.appointment_date = new Date(0);
