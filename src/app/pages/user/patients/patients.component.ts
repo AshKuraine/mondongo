@@ -8,6 +8,7 @@ import { ENSUREDS_DATA } from '../../../mock/ensured.mock';
 })
 export class PatientsComponent implements OnInit {
 
+  now = new Date();
   dni!: number;
   id_history!: string;
   name!: string;
@@ -40,9 +41,10 @@ export class PatientsComponent implements OnInit {
   ctrlBuscarDni!: FormControl;
 
   constructor() { 
-    this.ctrlName = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
-    this.ctrlLastname_p = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
-    this.ctrlLastname_m = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]);
+    
+    this.ctrlName = new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-ZÁÉÍÓÚáéíóúñÑ]+(\s+[a-zA-ZÁÉÍÓÚáéíóúñÑ]*[\S])*$/)]);
+    this.ctrlLastname_p = new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-ZÁÉÍÓÚáéíóúñÑ]+(\s+[a-zA-ZÁÉÍÓÚáéíóúñÑ]*[\S])*$/)]);
+    this.ctrlLastname_m = new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-ZÁÉÍÓÚáéíóúñÑ]+(\s+[a-zA-ZÁÉÍÓÚáéíóúñÑ]*[\S])*$/)]);
     this.ctrlDni = new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(8), Validators.maxLength(8)]);
     this.ctrlBirthday = new FormControl('', [Validators.required]);
     this.ctrlGender = new FormControl('', [Validators.required]);
@@ -51,7 +53,7 @@ export class PatientsComponent implements OnInit {
     this.ctrlCivil_status = new FormControl('', [Validators.required]);
     this.ctrlCountry = new FormControl('', [Validators.required]);
     this.ctrlDepartment = new FormControl('', [Validators.required]);
-    this.ctrlDistrict = new FormControl('', [Validators.required]);
+    this.ctrlDistrict = new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-ZÁÉÍÓÚáéíóúñÑ]+(\s+[a-zA-ZÁÉÍÓÚáéíóúñÑ]*[\S])*$/)]);
     this.ctrlAddress = new FormControl('', [Validators.required]);
 
     this.ctrlBuscarDni = new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]);

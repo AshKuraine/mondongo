@@ -78,6 +78,7 @@ export class AppointmentsComponent implements OnInit {
 
   generateAppointment(){
     let id: string = "";
+    let num!:number;
     if(this.dni!=0 && 
        this.controlDate.valid && 
        this.controlMedic.valid && 
